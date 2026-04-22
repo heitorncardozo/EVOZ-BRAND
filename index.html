@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EVOZ | Comunicação que conecta</title>
+    <meta
+      name="description"
+      content="A EVOZ transforma essência de marca em comunicação relevante — posicionamento, conteúdo e experiência para conexões reais."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+
+    <!-- Grain texture overlay -->
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <!-- ========== HEADER ========== -->
+    <header class="header">
+      <div class="container nav">
+        <div class="brand">EVOZ</div>
+        <nav class="nav__links">
+          <a class="nav__link nav__link--soon" href="#portfolio">
+            Portfólio
+            <span class="nav__badge">Em breve</span>
+          </a>
+          <a class="btn btn--ghost" href="#lead-form">Quero conversar</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- ========== HERO ========== -->
+      <section class="hero">
+
+        <!-- Ambient radial light inside wine -->
+        <div class="hero__glow" aria-hidden="true"></div>
+
+        <!-- Hanging phones illustration -->
+        <div class="phones-rack" aria-hidden="true">
+
+          <!--
+            Receiver shape: thick banana/crescent stroke with stroke-linecap="round"
+            This matches the EVOZ identity — a classic vintage handset, uniformly
+            thick with a rightward bow, NOT an hourglass. The rounded linecaps
+            form the earpiece (top) and mouthpiece (bottom) naturally.
+
+            Cord: tight sinusoidal coil, 8px amplitude, ~9px period — telephone cord style.
+          -->
+
+          <!-- Phone 1 — back / faintest (longest cord) -->
+          <div class="phone-unit phone-unit--1">
+            <svg class="cord-svg" viewBox="0 0 70 148" xmlns="http://www.w3.org/2000/svg" fill="none">
+              <path d="M35,0 C42,8 28,13 35,21 C42,29 28,34 35,42 C42,50 28,55 35,63 C42,71 28,76 35,84 C42,92 28,97 35,105 C42,113 28,118 35,126 C42,134 35,140 35,148"
+                stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+            </svg>
+            <svg class="receiver-svg" viewBox="0 0 70 230" xmlns="http://www.w3.org/2000/svg" fill="none">
+              <!-- Banana-curved receiver: uniform-thickness stroke with rounded caps -->
+              <path d="M34,18 C54,22 56,78 52,122 C48,166 34,186 26,212"
+                stroke="currentColor" stroke-width="30" stroke-linecap="round"/>
+              <!-- Subtle inner highlight for depth -->
+              <path d="M34,18 C54,22 56,78 52,122 C48,166 34,186 26,212"
+                stroke="rgba(255,255,255,0.07)" stroke-width="13" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <!-- Phone 2 — mid (medium cord) -->
+          <div class="phone-unit phone-unit--2">
+            <svg class="cord-svg" viewBox="0 0 70 112" xmlns="http://www.w3.org/2000/svg" fill="none">
+              <path d="M35,0 C42,8 28,13 35,21 C42,29 28,34 35,42 C42,50 28,55 35,63 C42,71 28,76 35,84 C42,92 28,97 35,105 C40,110 35,112 35,112"
+                stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+            </svg>
+            <svg class="receiver-svg" viewBox="0 0 70 230" xmlns="http://www.w3.org/2000/svg" fill="none">
+              <path d="M34,18 C54,22 56,78 52,122 C48,166 34,186 26,212"
+                stroke="currentColor" stroke-width="30" stroke-linecap="round"/>
+              <path d="M34,18 C54,22 56,78 52,122 C48,166 34,186 26,212"
+                stroke="rgba(255,255,255,0.07)" stroke-width="13" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <!-- Phone 3 — front / most visible (shortest cord) -->
+          <div class="phone-unit phone-unit--3">
+            <svg class="cord-svg" viewBox="0 0 70 78" xmlns="http://www.w3.org/2000/svg" fill="none">
+              <path d="M35,0 C42,8 28,13 35,21 C42,29 28,34 35,42 C42,50 28,55 35,63 C40,72 35,78 35,78"
+                stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+            </svg>
+            <svg class="receiver-svg" viewBox="0 0 70 230" xmlns="http://www.w3.org/2000/svg" fill="none">
+              <path d="M34,18 C54,22 56,78 52,122 C48,166 34,186 26,212"
+                stroke="currentColor" stroke-width="30" stroke-linecap="round"/>
+              <path d="M34,18 C54,22 56,78 52,122 C48,166 34,186 26,212"
+                stroke="rgba(255,255,255,0.07)" stroke-width="13" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+        </div><!-- /phones-rack -->
+
+        <!-- Hero text -->
+        <div class="container hero__inner">
+          <div class="hero__content reveal">
+            <p class="eyebrow eyebrow--wine">Identidade. Estratégia. Presença.</p>
+            <h1 class="hero__title">Marcas vivas precisam de uma voz que gere movimento.</h1>
+            <p class="hero__lead">
+              A EVOZ transforma essência de marca em comunicação relevante, unindo
+              posicionamento, conteúdo e experiência para gerar conexões reais.
+            </p>
+            <a class="btn btn--cream" href="#lead-form">Receber proposta</a>
+          </div>
+        </div>
+
+      </section><!-- /hero -->
+
+      <!-- ========== SERVICES ========== -->
+      <section class="section container reveal">
+        <div class="section__head">
+          <p class="eyebrow">Como atuamos</p>
+          <h2>Do conceito ao impacto</h2>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <span class="card__num">01</span>
+            <h3>Diagnóstico de marca</h3>
+            <p>Mapeamos percepção, diferencial competitivo e oportunidades latentes no seu mercado.</p>
+          </article>
+          <article class="card">
+            <span class="card__num">02</span>
+            <h3>Arquitetura de comunicação</h3>
+            <p>Definimos narrativa, tom de voz e direções criativas com consistência e propósito.</p>
+          </article>
+          <article class="card">
+            <span class="card__num">03</span>
+            <h3>Execução orientada a resultado</h3>
+            <p>Conteúdo, campanhas e canais integrados para tração e conversão reais.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ========== PORTFOLIO PLACEHOLDER ========== -->
+      <section id="portfolio" class="section container reveal">
+        <div class="section__head section__head--row">
+          <div>
+            <p class="eyebrow">Nosso trabalho</p>
+            <h2>Portfólio</h2>
+          </div>
+          <span class="badge-soon">Em construção</span>
+        </div>
+        <div class="portfolio-grid">
+          <div class="portfolio-card portfolio-card--ghost">
+            <div class="portfolio-card__inner">
+              <span class="portfolio-card__num">01</span>
+              <p class="portfolio-card__label">Case a publicar</p>
+            </div>
+          </div>
+          <div class="portfolio-card portfolio-card--ghost">
+            <div class="portfolio-card__inner">
+              <span class="portfolio-card__num">02</span>
+              <p class="portfolio-card__label">Case a publicar</p>
+            </div>
+          </div>
+          <div class="portfolio-card portfolio-card--ghost">
+            <div class="portfolio-card__inner">
+              <span class="portfolio-card__num">03</span>
+              <p class="portfolio-card__label">Case a publicar</p>
+            </div>
+          </div>
+        </div>
+        <p class="portfolio-note">Cases reais com resultados mensuráveis. Chegam em breve.</p>
+      </section>
+
+      <!-- ========== WHY EVOZ — WINE ========== -->
+      <section class="section section--wine reveal">
+        <div class="container split">
+          <div class="split__text">
+            <p class="eyebrow eyebrow--wine">Por que EVOZ</p>
+            <h2 class="h2--cream">Identidade forte com leitura contemporânea</h2>
+            <p class="text--cream">
+              O encontro entre tons terrosos, contraste sofisticado e ritmo visual
+              dinâmico cria uma experiência premium e acolhedora ao mesmo tempo.
+            </p>
+          </div>
+          <ul class="benefits">
+            <li>Posicionamento claro para o mercado certo</li>
+            <li>Comunicação coerente em todos os pontos de contato</li>
+            <li>Plano de ação com foco em crescimento sustentável</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ========== FORM ========== -->
+      <section id="lead-form" class="section container reveal">
+        <div class="section__head">
+          <p class="eyebrow">Vamos conversar</p>
+          <h2>Solicite um contato da equipe EVOZ</h2>
+        </div>
+        <form id="contactForm" class="form">
+          <label>
+            Nome *
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            E-mail *
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            Empresa
+            <input type="text" name="company" />
+          </label>
+          <label>
+            Mensagem
+            <textarea name="message" rows="4"></textarea>
+          </label>
+          <button type="submit" class="btn">Enviar para o time</button>
+          <p id="formMessage" class="form__message"></p>
+        </form>
+      </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <span class="brand brand--sm">EVOZ</span>
+        <span class="footer__tag">Comunicação que conecta.</span>
+      </div>
+    </footer>
+
+    <!-- Form + reveal logic -->
+    <script src="./script.js"></script>
+
+    <!-- Phone pendulum animation -->
+    <script>
+      document.querySelectorAll('.phone-unit').forEach(function (phone) {
+        phone.addEventListener('mouseenter', function () {
+          if (!phone.classList.contains('is-swinging')) {
+            phone.classList.add('is-swinging');
+          }
+        });
+        phone.addEventListener('animationend', function () {
+          phone.classList.remove('is-swinging');
+        });
+      });
+    </script>
+
+  </body>
+</html>

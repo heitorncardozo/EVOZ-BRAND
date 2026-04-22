@@ -1,0 +1,689 @@
+/* ============================================================
+   EVOZ — Identidade Visual / Stylesheet
+   ============================================================ */
+
+   :root {
+    /* Vinho — extraído da identidade visual */
+    --wine:        #3D0909;
+    --wine-mid:    #5C1515;
+    --wine-glow:   rgba(92, 21, 21, 0.55);
+  
+    /* Paleta de marca */
+    --bg:          #F3E3C3;
+    --cream:       #F3E3C3;
+    --cream-dim:   rgba(243, 227, 195, 0.68);
+    --text:        #7A4A32;
+    --text-dark:   #4F2C1D;
+    --accent:      #B23A2C;
+    --accent-2:    #E07A3F;
+    --deep:        #2F5D5A;
+    --card:        #F8ECD5;
+  
+    /* Tipografia */
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans:  "Inter", system-ui, sans-serif;
+  }
+  
+  /* ==================== RESET ==================== */
+  
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 1rem;
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3 {
+    font-family: var(--serif);
+    margin-top: 0;
+    color: var(--text-dark);
+    line-height: 1.05;
+  }
+  
+  a { color: inherit; }
+  
+  /* ==================== GRAIN ==================== */
+  
+  .grain-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 500;
+    pointer-events: none;
+    opacity: 0.028;
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='256' height='256'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.88' numOctaves='4' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='256' height='256' filter='url(%23n)'/></svg>");
+    background-size: 256px;
+  }
+  
+  /* ==================== LAYOUT ==================== */
+  
+  .container {
+    width: min(1100px, calc(100% - 3rem));
+    margin: 0 auto;
+  }
+  
+  /* ==================== HEADER ==================== */
+  
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    background: rgba(41, 6, 6, 0.92);
+    border-bottom: 1px solid rgba(243, 227, 195, 0.1);
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 72px;
+  }
+  
+  .brand {
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--cream);
+  }
+  
+  .brand--sm {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--cream);
+  }
+  
+  /* ==================== BUTTONS ==================== */
+  
+  .btn {
+    display: inline-block;
+    width: fit-content;
+    border: 0;
+    text-decoration: none;
+    background: linear-gradient(130deg, var(--accent), var(--accent-2));
+    color: #fff;
+    border-radius: 999px;
+    padding: 0.88rem 1.65rem;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: transform 0.24s ease, box-shadow 0.24s ease;
+    box-shadow: 0 10px 28px rgba(178, 58, 44, 0.3);
+  }
+  
+  .btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 16px 40px rgba(178, 58, 44, 0.42);
+  }
+  
+  /* Ghost — used in nav (on wine header) */
+  .btn--ghost {
+    background: transparent;
+    color: var(--cream);
+    border: 1px solid rgba(243, 227, 195, 0.3);
+    box-shadow: none;
+  }
+  
+  .btn--ghost:hover {
+    background: rgba(243, 227, 195, 0.08);
+    box-shadow: none;
+  }
+  
+  /* Cream — CTA on wine background */
+  .btn--cream {
+    background: var(--cream);
+    color: var(--wine);
+    font-weight: 700;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+  }
+  
+  .btn--cream:hover {
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.32);
+  }
+  
+  /* ==================== EYEBROW ==================== */
+  
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.74rem;
+    color: var(--deep);
+    font-weight: 600;
+    margin: 0 0 0.9rem;
+  }
+  
+  /* On dark wine backgrounds */
+  .eyebrow--wine {
+    color: rgba(243, 227, 195, 0.5);
+  }
+  
+  /* ==================== HERO ==================== */
+  
+  .hero {
+    position: relative;
+    min-height: 92vh;
+    background: var(--wine);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  /* Warm glow bleeding in from top-left */
+  .hero__glow {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 20% 40%, rgba(92, 21, 21, 0.6) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 30% at 80% 15%, rgba(178, 58, 44, 0.1) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 100% 80%, rgba(61, 9, 9, 0.4) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  
+  .hero__inner {
+    position: relative;
+    z-index: 2;
+    padding: 6rem 0 4rem;
+  }
+  
+  .hero__content {
+    max-width: 580px;
+    display: grid;
+    gap: 1.3rem;
+  }
+  
+  .hero__title {
+    font-family: var(--serif);
+    font-size: clamp(2.8rem, 8vw, 5.4rem);
+    font-weight: 600;
+    line-height: 0.95;
+    color: var(--cream);
+    max-width: 11ch;
+  }
+  
+  .hero__lead {
+    color: var(--cream-dim);
+    max-width: 50ch;
+    font-weight: 300;
+    font-size: 1.06rem;
+    line-height: 1.7;
+    margin: 0;
+  }
+  
+  /* ==================== PHONES RACK ==================== */
+  
+  .phones-rack {
+    position: absolute;
+    top: 0;
+    right: 7%;
+    width: 300px;
+    height: 100%;
+    pointer-events: none;
+    z-index: 3;
+  }
+  
+  .phone-unit {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    /* Pivot at the very top — where cord meets ceiling */
+    transform-origin: 50% 0%;
+  
+    pointer-events: all;
+    cursor: default;
+    transition: filter 0.35s ease;
+  }
+  
+  .phone-unit:hover {
+    filter: brightness(1.3);
+  }
+  
+  /* Layered depth: back → front */
+  .phone-unit--1 {
+    left: 10px;
+    color: rgba(243, 227, 195, 0.18);
+  }
+  
+  .phone-unit--2 {
+    left: 75px;
+    color: rgba(243, 227, 195, 0.42);
+    z-index: 1;
+  }
+  
+  .phone-unit--3 {
+    left: 148px;
+    color: rgba(243, 227, 195, 0.72);
+    z-index: 2;
+  }
+  
+  /* ==================== NAV LINKS ==================== */
+  
+  .nav__links {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+  }
+  
+  .nav__link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--cream-dim);
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: color 0.2s ease;
+  }
+  
+  .nav__link:hover {
+    color: var(--cream);
+  }
+  
+  .nav__badge {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: rgba(178, 58, 44, 0.35);
+    color: rgba(243, 227, 195, 0.75);
+    border: 1px solid rgba(178, 58, 44, 0.4);
+    border-radius: 999px;
+    padding: 0.15rem 0.5rem;
+  }
+  
+  /* ==================== PORTFOLIO SECTION ==================== */
+  
+  .section__head--row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  
+  .badge-soon {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--text);
+    opacity: 0.55;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.25rem;
+  }
+  
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.2rem;
+  }
+  
+  .portfolio-card {
+    border-radius: 22px;
+    border: 2px dashed rgba(122, 74, 50, 0.22);
+    aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    transition: border-color 0.3s ease, background 0.3s ease;
+  }
+  
+  .portfolio-card:hover {
+    border-color: rgba(61, 9, 9, 0.22);
+    background: rgba(248, 236, 213, 0.4);
+  }
+  
+  .portfolio-card__inner {
+    text-align: center;
+    display: grid;
+    gap: 0.3rem;
+  }
+  
+  .portfolio-card__num {
+    font-family: var(--serif);
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: rgba(122, 74, 50, 0.15);
+    line-height: 1;
+    display: block;
+  }
+  
+  .portfolio-card__label {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: rgba(122, 74, 50, 0.35);
+    margin: 0;
+    font-weight: 500;
+  }
+  
+  .portfolio-note {
+    margin: 1.6rem 0 0;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.05rem;
+    color: rgba(122, 74, 50, 0.5);
+    letter-spacing: 0.02em;
+  }
+  
+  .cord-svg {
+    width: 70px;
+    color: inherit;
+    opacity: 0.8;
+  }
+  
+  .receiver-svg {
+    width: 70px;
+    margin-top: -2px;
+    color: inherit;
+    filter: drop-shadow(0 12px 32px rgba(0, 0, 0, 0.55));
+  }
+  
+  /* ---- Pendulum swing ---- */
+  .phone-unit.is-swinging {
+    animation: pendulum 1.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  }
+  
+  @keyframes pendulum {
+    0%   { transform: rotate(0deg); }
+    14%  { transform: rotate(24deg); }
+    34%  { transform: rotate(-15deg); }
+    50%  { transform: rotate(9deg); }
+    65%  { transform: rotate(-5deg); }
+    80%  { transform: rotate(2.5deg); }
+    100% { transform: rotate(0deg); }
+  }
+  
+  /* ==================== SECTIONS ==================== */
+  
+  .section {
+    padding: 5.2rem 0;
+  }
+  
+  .section__head {
+    margin-bottom: 2.6rem;
+  }
+  
+  .section__head h2 {
+    font-size: clamp(2rem, 5.5vw, 3.4rem);
+    margin-bottom: 0;
+  }
+  
+  /* ==================== SERVICE CARDS ==================== */
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.2rem;
+  }
+  
+  .card {
+    position: relative;
+    background: var(--card);
+    border: 1px solid rgba(122, 74, 50, 0.15);
+    border-radius: 22px;
+    padding: 1.8rem 1.6rem 1.6rem;
+    overflow: hidden;
+    transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+  }
+  
+  /* Subtle wine wash on hover */
+  .card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(140deg, rgba(61, 9, 9, 0.04), transparent 55%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.28s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(61, 9, 9, 0.18);
+    box-shadow: 0 22px 52px rgba(61, 9, 9, 0.11);
+  }
+  
+  .card:hover::after {
+    opacity: 1;
+  }
+  
+  .card__num {
+    display: block;
+    font-family: var(--serif);
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1;
+    color: rgba(61, 9, 9, 0.1);
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.02em;
+  }
+  
+  .card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 0.55rem;
+  }
+  
+  .card p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text);
+  }
+  
+  /* ==================== WINE SECTION ==================== */
+  
+  .section--wine {
+    position: relative;
+    background: var(--wine);
+    overflow: hidden;
+  }
+  
+  .section--wine::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 55% 70% at 90% 50%, rgba(178, 58, 44, 0.12) 0%, transparent 65%),
+      radial-gradient(ellipse 40% 40% at 10% 80%, rgba(92, 21, 21, 0.3) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  
+  .section--wine .container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .h2--cream {
+    color: var(--cream) !important;
+  }
+  
+  .text--cream {
+    color: var(--cream-dim);
+    font-weight: 300;
+    font-size: 1.04rem;
+    margin: 0;
+  }
+  
+  .split {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+  }
+  
+  .split__text {
+    display: grid;
+    gap: 1rem;
+  }
+  
+  .benefits {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.85rem;
+  }
+  
+  .benefits li {
+    padding: 1rem 1.2rem;
+    border-radius: 14px;
+    background: rgba(243, 227, 195, 0.06);
+    border: 1px solid rgba(243, 227, 195, 0.12);
+    border-left: 3px solid var(--accent-2);
+    color: var(--cream-dim);
+    font-size: 0.94rem;
+    transition: background 0.22s ease, color 0.22s ease;
+  }
+  
+  .benefits li:hover {
+    background: rgba(243, 227, 195, 0.1);
+    color: var(--cream);
+  }
+  
+  /* ==================== FORM ==================== */
+  
+  .form {
+    background: var(--card);
+    border: 1px solid rgba(122, 74, 50, 0.2);
+    border-radius: 24px;
+    padding: 2rem;
+    display: grid;
+    gap: 1rem;
+    max-width: 640px;
+  }
+  
+  label {
+    display: grid;
+    gap: 0.4rem;
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--text-dark);
+    letter-spacing: 0.02em;
+  }
+  
+  input,
+  textarea {
+    font: inherit;
+    font-weight: 400;
+    font-size: 1rem;
+    border-radius: 12px;
+    border: 1.5px solid rgba(122, 74, 50, 0.22);
+    padding: 0.78rem 0.95rem;
+    background: rgba(255, 253, 250, 0.92);
+    color: var(--text);
+    transition: border-color 0.22s ease, box-shadow 0.22s ease;
+  }
+  
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--wine-mid);
+    box-shadow: 0 0 0 3px rgba(61, 9, 9, 0.09);
+  }
+  
+  .form__message {
+    margin: 0.15rem 0 0;
+    font-size: 0.94rem;
+    min-height: 1.3rem;
+  }
+  
+  /* ==================== FOOTER ==================== */
+  
+  .footer {
+    background: var(--wine);
+    padding: 2.2rem 0;
+    border-top: 1px solid rgba(243, 227, 195, 0.1);
+  }
+  
+  .footer__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer__tag {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: rgba(243, 227, 195, 0.38);
+    letter-spacing: 0.04em;
+  }
+  
+  /* ==================== REVEAL ==================== */
+  
+  .reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* ==================== RESPONSIVE ==================== */
+  
+  @media (max-width: 960px) {
+    .grid,
+    .split,
+    .portfolio-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .section__head--row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  
+    .phones-rack {
+      right: 0;
+      width: 180px;
+      opacity: 0.45;
+    }
+  
+    .phone-unit--1 { left: 0; }
+    .phone-unit--2 { left: 50px; }
+    .phone-unit--3 { left: 100px; }
+  
+    .cord-svg, .receiver-svg { width: 46px; }
+  
+    .hero__title {
+      position: relative;
+      z-index: 4;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .phones-rack {
+      display: none;
+    }
+  
+    .hero__content {
+      max-width: 100%;
+    }
+  
+    .footer__inner {
+      flex-direction: column;
+      gap: 0.6rem;
+      text-align: center;
+    }
+  
+    .nav__link {
+      display: none; /* hide portfolio nav on mobile, show only CTA */
+    }
+  }
